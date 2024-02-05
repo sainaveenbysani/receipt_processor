@@ -1,35 +1,36 @@
 package com.fetch.processor.dto;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.List;
-
-import com.fetch.processor.model.Item;
-
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class ReceiptDTO {
-	
-	private String retailer;
-	
-	private String purchaseDate;
-	
-	private String purchaseTime;
-	
-	@NotNull
-	@Valid
-	@Size(min=1)
-	private List<ItemDTO> items;
-	
-	@NotBlank
-	private String total;
+    @NotEmpty
+    @Pattern(regexp = "^[\\w\\s\\&\\-]+$")
+    private String retailer;
+
+    @NotEmpty
+    private String purchaseDate;
+
+    @NotEmpty
+    private String purchaseTime;
+
+    @Valid
+    @NotEmpty
+    @Size(min=1)
+    private List<ItemDTO> items;
+
+    @NotEmpty
+    @Pattern(regexp = "^\\d+\\.\\d{2}$")
+    private String total;
 }
+

@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
@@ -26,10 +27,11 @@ public class GlobalExceptionHandler {
 		ErrorResponse errorResponse = new ErrorResponse(ex.getMessage(),HttpStatus.NOT_FOUND.value());
 		return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST) ;	
 	}
-	
-	 @ExceptionHandler(MethodArgumentNotValidException.class)
+	 
+	@ExceptionHandler(MethodArgumentNotValidException.class)
+	@ResponseStatus(HttpStatus.BAD_REQUEST)
     public ResponseEntity<String> handleValidationException(MethodArgumentNotValidException ex) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                .body("The receipt is invalid");
+        String errorMessage = "The receipt is invalid";
+        return ResponseEntity.badRequest().body(errorMessage);
     }
 }

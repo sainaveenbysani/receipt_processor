@@ -1,6 +1,7 @@
 package com.fetch.processor.dto;
 
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,10 +11,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ItemDTO {
 	
-	@NotBlank
-	private String shortDescription;
-	
-	@NotBlank
-	private String price;
+    @NotEmpty
+    @Pattern(regexp = "^[\\w\\s\\&\\-]+$")
+    private String shortDescription;
+
+    @NotEmpty
+    @Pattern(regexp = "^\\d+\\.\\d{2}$")
+    private String price;
 
 }
