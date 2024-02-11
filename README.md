@@ -9,16 +9,16 @@ Once it is downloaded you need to load the docker image by using any of the foll
 1) Open command prompt or terminal.
 2) Navigate to the directory where the downloaded tar file located.
 3) Run any one of the following commands to load the docker image to your local docker
-   docker load -i sai_docker.tar
+   `docker load -i sai_docker.tar`
     Or
-   docker import sai_docker.tar
+   `docker import sai_docker.tar`
    
 5) It might take few seconds to complete the process. Once process is completed verify whether it is available in local images.
 6) Use below command to check whether the docker image is available in your local images.
-   docker images
+   `docker images`
 7) Here you should see an image with name sai-docker.
 8) Lastly run the image in container with the below command
-   docker run --publish 8080:8080 sai-docker
+   `docker run --publish 8080:8080 sai-docker`
 9) It should start a spring boot project and run in your local environment.
 10) Test the API's using local host at port number 8080.
 
