@@ -17,7 +17,7 @@ Once it is downloaded you need to load the docker image by using any of the foll
 6) Use below command to check whether the docker image is available in your local images.
    `docker images`
 7) Here you should see an image with name sai-docker.
-8) Lastly run the image in container with the below command
+8) Lastly run the image in container with the below command, As of now the application server is using embedded Apache tomcat that will be intialized at port 8080. Make sure to run it only at port 8080.
    `docker run --publish 8080:8080 sai-docker`
 9) It should start a spring boot project and run in your local environment.
 10) Test the API's using local host at port number 8080.
