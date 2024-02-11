@@ -44,7 +44,7 @@ public class ReceiptProcessService {
 		}
 	}
 	
-	private Long getPurchaseTime(LocalTime purchaseTime) {
+	public Long getPurchaseTime(LocalTime purchaseTime) {
 		long points=0L;
 		if (purchaseTime.isAfter(LocalTime.parse("14:00")) && purchaseTime.isBefore(LocalTime.parse("16:00"))) {
             points = points + 10;
@@ -52,7 +52,7 @@ public class ReceiptProcessService {
 		return points;
 	}
 
-	private Long getPurchaseDate(LocalDate purchaseDate) {
+	public Long getPurchaseDate(LocalDate purchaseDate) {
 		long points = 0L;
 		if(purchaseDate.getDayOfMonth()%2 !=0) {
 			points = points + 6;
@@ -60,7 +60,7 @@ public class ReceiptProcessService {
 		return points;
 	}
 
-	private Long getItemsPoints(List<Item> items) {
+	public Long getItemsPoints(List<Item> items) {
 		long points = 0L;
 		points = points + 5 *(items.size()/2);
 		for(Item item : items) {
@@ -72,7 +72,7 @@ public class ReceiptProcessService {
 		return points;
 	}
 
-	private Long getTotalPoints(double total) {
+	public Long getTotalPoints(double total) {
 		long points = 0L;
 		if(total%0.25==0.00) {
 			points = points +25;
@@ -83,7 +83,7 @@ public class ReceiptProcessService {
 		return points;
 	}
 
-	private long getRetailerPoints(String name) {
+	public long getRetailerPoints(String name) {
 		long points = 0L;
 		for(int i=0; i<name.length();i++){
 			if(Character.isLetterOrDigit(name.charAt(i))){
