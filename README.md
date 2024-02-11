@@ -8,7 +8,7 @@ Download the Files_Main folder into local and Extract the folder. It will contai
 
 Now you need to load the docker image from tar file by using any of the following commands that best suits your systems.
 1) Open command prompt or terminal.
-2) Navigate to the directory where the downloaded tar file located.
+2) Navigate to the directory where the downloaded tar file is located.
 3) Run any one of the following commands to load the docker image to your local docker
    `docker load -i receipt_docker.tar`
     Or
