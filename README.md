@@ -1,11 +1,12 @@
 The API Documentation and the requirements for this challenge can be found here.
 https://github.com/fetch-rewards/receipt-processor-challenge/
 
-PreRequisite: Docker need to installed and running in your machine.
+PreRequisite: Docker need to be installed and running in your machine.
 Here, I providing the docker image so that you can download it directly and run it in your machine.
-Download Docker Image here:
+Download Docker Image here:https://github.com/sainaveenbysani/Files
+Download the Files_Main folder into local and Extract the folder. It will contain the receipt_docker.tar zip file.
 
-Once it is downloaded you need to load the docker image by using any of the following commands that best suits your systems.
+Now you need to load the docker image from tar file by using any of the following commands that best suits your systems.
 1) Open command prompt or terminal.
 2) Navigate to the directory where the downloaded tar file located.
 3) Run any one of the following commands to load the docker image to your local docker
